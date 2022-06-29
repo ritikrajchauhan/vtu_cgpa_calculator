@@ -5,7 +5,7 @@ Marks of all semesters can be saved in the database for later use.
   
 **Note:** For subjects which are cleared in more than one attempt, update the marks on clearing the subject, the CGPA will reflect the latest score.
   
-Download [Debug APK](https://github.com/razer2505/vtu_cgpa_calculator/blob/master/apk/app-debug.apk)
+Download [Debug APK](https://github.com/razer2505/vtu_cgpa_calculator/blob/master/apk/app-debug.apk?raw=true)
 
 
 ## Screenshots

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:minWidth="200dp"
+    android:padding="24dp"
+    android:background="#CDCDCD" >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/student_edit_name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:hint="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_student_name"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/student_edit_usn_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:hint="USN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/student_edit_name_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_student_usn"
+            android:layout_width="match_parent"
+            android:maxLength="10"
+            android:layout_height="match_parent"
+            android:text="1AR19">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Spinner
+        android:id="@+id/edit_branch_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/card_bg"
+        android:padding="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="@id/student_edit_usn_layout"
+        app:layout_constraintStart_toStartOf="@id/student_edit_usn_layout"
+        app:layout_constraintTop_toBottomOf="@id/student_edit_usn_layout" />
+
+    <Button
+        android:id="@+id/save_student_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:backgroundTint="#878787"
+        android:textColor="@color/black"
+        android:text="save"
+        app:layout_constraintEnd_toEndOf="@id/edit_branch_spinner"
+        app:layout_constraintTop_toBottomOf="@id/edit_branch_spinner" />
+
+    <Button
+        android:id="@+id/cancel_student_info"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:text="cancel"
+        app:layout_constraintEnd_toStartOf="@id/save_student_info"
+        app:layout_constraintTop_toTopOf="@id/save_student_info" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

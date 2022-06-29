@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:background="#CDCDCD" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.CalculatorFragment">
+
+        <TextView
+            android:id="@+id/calculator_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="SGPA Calculator"
+            android:textAppearance="?textAppearanceHeadline4"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/scheme_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For 2018 Scheme"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="@+id/calculator_name"
+            app:layout_constraintStart_toStartOf="@+id/calculator_name"
+            app:layout_constraintTop_toBottomOf="@+id/calculator_name" />
+
+
+        <Spinner
+            android:id="@+id/semester_spinner"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/card_bg"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scheme_label" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/calculator_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/semester_spinner"
+            app:spanCount="2"
+            tools:listitem="@layout/recycler_view_marks_list" />
+
+        <TextView
+            android:id="@+id/calculated_sgpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:fontFamily="@font/libre_baskerville_regular"
+            android:letterSpacing="0.05"
+            android:maxLength="4"
+            android:text="8.5"
+            android:textAppearance="?textAppearanceHeadline4"
+            android:textColor="#FF0000"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/sgpa_word_label"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculator_recycler_view" />
+
+        <TextView
+            android:id="@+id/sgpa_word_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" SGPA"
+            android:textColor="#FF0000"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/calculated_sgpa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/calculated_sgpa" />
+
+        <TextView
+            android:id="@+id/calculated_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(0.0%)"
+            android:textColor="#FF0000"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/sgpa_word_label"
+            app:layout_constraintStart_toStartOf="@id/calculated_sgpa"
+            app:layout_constraintTop_toBottomOf="@id/calculated_sgpa" />
+
+        <Button
+            android:id="@+id/clear_text"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="Clear Text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/calculate_sgpa"
+            app:layout_constraintEnd_toStartOf="@id/calculate_sgpa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/calculate_sgpa" />
+
+        <Button
+            android:id="@+id/calculate_sgpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:backgroundTint="#878787"
+            android:textColor="@color/black"
+            android:text="Calculate SGPA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/clear_text"
+            app:layout_constraintTop_toBottomOf="@id/calculated_percentage" />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:justificationMode="inter_word"
+            android:textAlignment="center"
+            android:lineSpacingExtra="2dp"
+            android:text="@string/calculator_note"
+            android:textAppearance="?textAppearanceBody2"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculate_sgpa"/>
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate_sgpa" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

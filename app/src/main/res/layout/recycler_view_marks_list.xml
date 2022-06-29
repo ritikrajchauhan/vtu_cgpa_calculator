@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/subject_code"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_medium"
+    android:layout_marginEnd="@dimen/margin_medium"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:background="#CDCDCD"
+    android:padding="8dp"
+    app:boxStrokeColor="@color/black"
+    app:hintTextAppearance="?textAppearanceSubtitle1"
+    app:hintTextColor="@color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:placeholderTextAppearance="?textAppearanceSubtitle1">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/subject_marks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textAppearance="?textAppearanceHeadline5"
+        android:textColor="@color/black" />
+
+</com.google.android.material.textfield.TextInputLayout>
+
+

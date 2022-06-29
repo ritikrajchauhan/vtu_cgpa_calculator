@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CDCDCD"
+    android:clickable="true"
+    tools:context=".ui.ReportFragment">
+
+    <TextView
+        android:id="@+id/cgpa_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.05"
+        android:text="CGPA "
+        android:textColor="#FF0018"
+        app:layout_constraintBaseline_toBaselineOf="@id/student_cgpa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/student_cgpa" />
+
+    <TextView
+        android:id="@+id/student_cgpa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:fontFamily="@font/libre_baskerville_regular"
+        android:letterSpacing="0.05"
+        android:maxLength="4"
+        android:textAppearance="?textAppearanceHeadline4"
+        android:textColor="#FF0018"
+        app:layout_constraintEnd_toStartOf="@id/cgpa_label"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="8.5" />
+
+    <TextView
+        android:id="@+id/cgpa_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0018"
+        app:layout_constraintEnd_toEndOf="@+id/cgpa_label"
+        app:layout_constraintStart_toStartOf="@+id/student_cgpa"
+        app:layout_constraintTop_toBottomOf="@+id/student_cgpa"
+        tools:text="34.33%" />
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/all_semesters_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cgpa_percentage" />
+
+    <TextView
+        android:id="@+id/all_semesters_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:text="All Semesters"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/divider_line"
+        app:layout_constraintEnd_toStartOf="@id/divider_line2"
+        app:layout_constraintStart_toEndOf="@id/divider_line"
+        app:layout_constraintTop_toTopOf="@id/divider_line" />
+
+    <View
+        android:id="@+id/divider_line2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/all_semesters_label"
+        app:layout_constraintTop_toTopOf="@id/divider_line" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_sem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_line"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="16dp"
+        tools:listitem="@layout/recycler_view_sem_list" />
+
+    <ImageButton
+        android:id="@+id/btnPDF"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pdf_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
